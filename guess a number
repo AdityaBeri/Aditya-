@@ -1,0 +1,88 @@
+# Aditya-
+This is a small game made by me. I am new to this field. please help if there is any mistake.
+#Guess a number
+import random
+def game(EndingLife,Numbers):
+    StartingLife = 0
+    CompChoice = random.randint(1,Numbers)
+    while (StartingLife<=EndingLife):
+        try:
+            HumanChoice=int(input(f"Enter a number between 1:{Numbers};\t"))
+            StartingLife=StartingLife+1
+
+        except:
+            HumanChoice = int(input(f"Enter a number between 1:{Numbers};\t"))
+            StartingLife=StartingLife+1
+        if EndingLife-StartingLife==1:
+            print("1 chance is left")
+        if HumanChoice==CompChoice:
+            print(f"{EndingLife - StartingLife} chances are left")
+            print(f"Congratulations!!! You guessed the number that computer chose.")
+
+            break
+        elif HumanChoice>CompChoice:
+            print(f"Hint:\tPlease choose a smaller number from {HumanChoice}:\n")
+            print(f"{EndingLife - StartingLife} chances are left")
+        elif HumanChoice<CompChoice:
+            print(f"Hint:\tPlease choose a bigger number from {HumanChoice}:\n")
+            print(f"{EndingLife - StartingLife} chances are left")
+        else:
+            print("You chose wrong")
+            print(f"{EndingLife - StartingLife} chances are left")
+        if StartingLife==EndingLife:
+            print(f"Computer choice was {CompChoice}")
+            print(f"You have used all chances and your GAME IS OVER")
+            break
+
+while(True):
+    MainChoice=input('''Type the mode you want to play from the following:\n\t*Easy(e) , \n\t*Medium(m) , \n\t*Hard(h) , \n\t*Insane(i) , \n\t*Customize Youself(c)\nEnter Here:\t''')
+#Easy
+    if MainChoice== "e" or MainChoice=="E":
+        a = random.randint(15,20)
+        b=random.randint(50,60)
+        print(f"You chose EASY mode so you will get {a} chances and have to guess number between 1:{b}")
+        game(a,b)
+        Exit = input('''If you want to continue then press "c" or want to end then press "e":\t''')
+        if Exit == "e" or Exit == "E" or Exit == "End":
+            print("Thanks of playing")
+            break
+#Medium
+    elif MainChoice== "m" or MainChoice=="M":
+        a=random.randint(11,15)
+        b=random.randint(55,65)
+        print(f"You chose MEDIUM mode so you will get {a} chances and have to guess number between 1:{b}")
+        game(a, b)
+        Exit = input('''If you want to continue then press "c" or want to end then press "e":\t''')
+        if Exit == "e" or Exit == "E" or Exit == "End":
+            print("Thanks of playing")
+            break
+#Hard
+    elif MainChoice== "h" or MainChoice=="H":
+        a=random.randint(7,11)
+        b=random.randint(55,65)
+        print(f"You chose HARD mode so you will get {a} chances and have to guess number between 1:{b}")
+        game(a, b)
+        Exit = input('''If you want to continue then press "c" or want to end then press "e":\t''')
+        if Exit == "e" or Exit == "E" or Exit == "End":
+            print("Thanks of playing")
+            break
+#Insane
+    elif MainChoice== "i" or MainChoice=="I":
+        a=random.randint(3,7)
+        b=random.randint(55, 60)
+        print(f"You chose INSANE mode so you will get {a} chances and have to guess number between 1:{b}")
+        game(a, b)
+        Exit = input('''If you want to continue then press "c" or want to end then press "e":\t''')
+        if Exit == "e" or Exit == "E" or Exit == "End":
+            print("Thanks of playing")
+            break
+#Custom
+    elif MainChoice== "c" or MainChoice=="C":
+        a=int(input("Enter the number of chances you want:\t"))
+        b=int(input("Enter the numbers in between you want to choose:\t"))
+        print(f"You chose CUSTOM mode so you will get {a} chances and have to guess number between 1:{b}")
+        game(a, b)
+        Exit = input('''If you want to continue then press "c" or want to end then press "e":\t''')
+        if Exit == "e" or Exit == "E" or Exit == "End":
+            print("Thanks of playing")
+            break
